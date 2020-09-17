@@ -1,5 +1,12 @@
 #! /bin/sh
-cd spacy_ixakat || exit 1
+D=`dirname $0`
+case $D in
+*/bin) D=`dirname $D` ;;
+.) D=`/bin/pwd`
+   D=`dirname $D` ;;
+*) D=$D/.. ;;
+esac
+cd $D
 if [ -d ixa-pipe-dep-eu ]
 then :
 else curl -L http://ixa2.si.ehu.es/ixakat/downloads/ixa-pipe-dep-eu-v2.0.0.tgz | tar xzf -

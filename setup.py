@@ -5,14 +5,19 @@ with open("README.md","r",encoding="utf-8") as r:
 URL="https://github.com/KoichiYasuoka/spaCy-ixaKit"
 
 if platform.system()=="Linux" and platform.machine()=="x86_64":
-  subprocess.check_call(["./download.sh"])
+  subprocess.check_call(["spacy_ixakat/bin/download"])
 else:
   raise OSError("spaCy-ixaKat only for 64-bit Linux")
-packages=subprocess.check_output(["./packages.sh"]).decode("utf-8").rstrip().split("\n")
+
+try:
+  p=subprocess.check_output(["./packages.sh"])
+except:
+  p=subprocess.check_output(["spacy_ixakat/bin/packages"])
+packages=p.decode("utf-8").rstrip().split("\n")
 
 setuptools.setup(
   name="spacy_ixakat",
-  version="0.1.5",
+  version="0.2.0",
   description="ixaKat wrapper for spaCy",
   long_description=long_description,
   long_description_content_type="text/markdown",
