@@ -33,11 +33,10 @@ da        VERB  ═══════╝═╝═╗ ROOT
 
 `spacy_ixakat.load(convUD=True)` loads spaCy Language pipeline for ixaKat. `convUD=False` disables the conversion into Universal Dependencies and forces the pipeline to return `str` of CoNLL.
 
-## Installation for Linux (64-bit)
-
-`java` `git` `curl` and `libncursesw5` required:
+## Installation for Linux (Debian, Ubuntu, Kali)
 
 ```sh
+sudo apt install python3-pip python3-dev default-jre-headless git curl libncursesw5
 pip3 install git+https://github.com/KoichiYasuoka/spaCy-ixaKat
 ```
 
