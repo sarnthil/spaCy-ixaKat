@@ -17,7 +17,7 @@ packages=p.decode("utf-8").rstrip().split("\n")
 
 setuptools.setup(
   name="spacy_ixakat",
-  version="0.4.2",
+  version="0.4.3",
   description="ixaKat wrapper for spaCy",
   long_description=long_description,
   long_description_content_type="text/markdown",
