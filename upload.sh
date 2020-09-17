@@ -1,9 +1,9 @@
 #! /bin/sh
 rm -fr build dist *.egg-info
+cp packages.sh packages.sh.bak
+fgrep -v dep-eu-resources packages.sh.bak > packages.sh
 python3 setup.py sdist
-# for F in dist/*
-# do mv -i $F `echo $F | sed 's/-any\./-manylinux1_x86_64./'`
-# done
+mv packages.sh.bak packages.sh
 git status
 twine upload --repository pypi dist/*
 exit 0
