@@ -1,3 +1,5 @@
+[![Current PyPI packages](https://badge.fury.io/py/spacy-ixakat.svg)](https://pypi.org/project/spacy-ixakat/)
+
 # spaCy-ixaKat
 
 [ixaKat](http://ixa2.si.ehu.es/ixakat/ixa-pipe-dep-eu.php) wrapper for spaCy
