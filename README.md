@@ -35,6 +35,33 @@ da        VERB  ═══════╝═╝═╗ ROOT
 
 `spacy_ixakat.load(convUD=True)` loads spaCy Language pipeline for ixaKat. `convUD=False` disables the conversion into Universal Dependencies and forces the pipeline to return `str` of CoNLL.
 
+```py
+>>> import spacy_ixakat
+>>> nlp=spacy_ixakat.load(convUD=False)
+>>> doc=nlp("Euskaldun izatea lan extra bat izatea da.")
+>>> print(doc)
+1	Euskaldun	euskaldun	ADJ	ADJ	KAS=ZERO|CLUSTER=01010111|CLUSTERM=0101|ATZIZKIA=Null	2	ncmod	_	_
+2	izatea	izan	ADI	ADI_SIN	KAS=ABS|ERL=KONPL|ADM=ADIZE|CLUSTER=0110100|CLUSTERM=0110|ATZIZKIA=Null	7	xcomp_subj	_	_
+3	lan	lan	IZE	IZE_ARR	KAS=ZERO|CLUSTER=1011110111010|CLUSTERM=1011|ATZIZKIA=Null	6	ncmod	_	_
+4	extra	extra	ADJ	ADJ	KAS=ZERO|CLUSTER=01111110100|CLUSTERM=0111|ATZIZKIA=Null	3	ncmod	_	_
+5	bat	bat	DET	DET_DZH	CLUSTER=1011010|CLUSTERM=1011|ATZIZKIA=Null	3	detmod	_	_
+6	izatea	izate	IZE	IZE_ARR	KAS=ABS|NUM=S|CLUSTER=0110100|CLUSTERM=0110|ATZIZKIA=a	7	ncpred	_	_
+7	da	izan	ADT	ADT	ASP=PNT|MDN=A1|DADUDIO=NOR|NOR=HURA|CLUSTER=0110100|CLUSTERM=0110|ATZIZKIA=Null	0	ROOT	_	SpaceAfter=No
+8	.	.	PUNT	PUNT_PUNT	_	7	PUNC	_	_
+
+
+>>> import deplacy
+>>> deplacy.render(doc)
+Euskaldun ADJ  <╗         ncmod
+izatea    ADI  ═╝<══════╗ xcomp_subj
+lan       IZE  ═╗═╗<╗   ║ ncmod
+extra     ADJ  <╝ ║ ║   ║ ncmod
+bat       DET  <══╝ ║   ║ detmod
+izatea    IZE  ═════╝<╗ ║ ncpred
+da        ADT  ═╗═════╝═╝ ROOT
+.         PUNT <╝         PUNC
+```
+
 ## Installation for Linux (Debian, Ubuntu, Kali)
 
 ```sh
