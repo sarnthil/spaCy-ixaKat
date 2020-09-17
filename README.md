@@ -38,6 +38,6 @@ da        VERB  ═══════╝═╝═╗ ROOT
 ```sh
 sudo apt update
 sudo apt install python3-pip python3-dev default-jre-headless git curl libncursesw5
-pip3 install git+https://github.com/KoichiYasuoka/spaCy-ixaKat --user
+pip3 install spacy_ixakat --user
 ```
 
