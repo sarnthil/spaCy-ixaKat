@@ -35,7 +35,7 @@ da        VERB  ═══════╝═╝═╗ ROOT
 
 ## Installation for Linux (64-bit)
 
-`java` `curl` and `libncursesw5` required:
+`java` `git` `curl` and `libncursesw5` required:
 
 ```sh
 pip3 install git+https://github.com/KoichiYasuoka/spaCy-ixaKat
