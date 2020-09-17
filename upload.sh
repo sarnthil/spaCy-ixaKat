@@ -1,7 +1,7 @@
 #! /bin/sh
 rm -fr build dist *.egg-info
 cp packages.sh packages.sh.bak
-fgrep -v dep-eu-resources packages.sh.bak > packages.sh
+sed 's/^.*dep-eu-resources/# &/' packages.sh.bak > packages.sh
 python3 setup.py sdist
 mv packages.sh.bak packages.sh
 git status
