@@ -70,3 +70,11 @@ sudo apt install python3-pip python3-dev default-jre-headless curl libncursesw5
 pip3 install spacy_ixakat --user
 ```
 
+## Installation for Linux (CentOS)
+
+```sh
+sudo yum update
+sudo yum install python3-pip python3-devel java-1.8.0-openjdk-headless curl ncurses
+pip3 install spacy_ixakat --user
+```
+
