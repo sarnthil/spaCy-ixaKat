@@ -2,7 +2,7 @@ import setuptools,subprocess,platform
 
 with open("README.md","r",encoding="utf-8") as r:
   long_description=r.read()
-URL="https://github.com/KoichiYasuoka/spaCy-ixaKit"
+URL="https://github.com/KoichiYasuoka/spaCy-ixaKat"
 
 if platform.system()=="Linux" and platform.machine()=="x86_64":
   subprocess.check_call(["spacy_ixakat/bin/download"])
@@ -17,7 +17,7 @@ packages=p.decode("utf-8").rstrip().split("\n")
 
 setuptools.setup(
   name="spacy_ixakat",
-  version="0.2.0",
+  version="0.3.0",
   description="ixaKat wrapper for spaCy",
   long_description=long_description,
   long_description_content_type="text/markdown",
