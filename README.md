@@ -78,3 +78,7 @@ sudo yum install python3-pip python3-devel java-1.8.0-openjdk-headless curl ncur
 pip3 install spacy_ixakat --user
 ```
 
+## Installation for Google Colaboratory
+
+Try [notebook](https://colab.research.google.com/github/KoichiYasuoka/spaCy-ixaKat/blob/master/spacy_ixakat.ipynb).
+
