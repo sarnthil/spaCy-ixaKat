@@ -2,7 +2,7 @@
 
 # spaCy-ixaKat
 
-[ixaKat](http://ixa2.si.ehu.es/ixakat/ixa-pipe-dep-eu.php) wrapper for spaCy
+[ixaKat](http://ixa2.si.ehu.es/ixakat/ixa-pipe-dep-eu.php) wrapper for [spaCy](https://spacy.io)
 
 ## Basic Usage
 
