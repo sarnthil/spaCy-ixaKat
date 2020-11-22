@@ -17,7 +17,7 @@ packages=p.decode("utf-8").rstrip().split("\n")
 
 setuptools.setup(
   name="spacy_ixakat",
-  version="0.5.5",
+  version="0.5.6",
   description="ixaKat wrapper for spaCy",
   long_description=long_description,
   long_description_content_type="text/markdown",
@@ -28,7 +28,7 @@ setuptools.setup(
   keywords="ixaKat spaCy",
   packages=setuptools.find_packages(),
   package_data={"spacy_ixakat":packages},
-  install_requires=["spacy>=2.2.2","deplacy>=1.8.1"],
+  install_requires=["spacy>=2.2.2<3","deplacy>=1.8.3"],
   python_requires=">=3.6",
   classifiers=[
     "License :: OSI Approved :: MIT License",
