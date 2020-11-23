@@ -17,9 +17,15 @@ class ixaKatLanguage(Language):
   max_length=10**6
   def __init__(self,convUD):
     self.Defaults.lex_attr_getters[LANG]=lambda _text:"eu"
-    self.vocab=self.Defaults.create_vocab()
+    try:
+      self.vocab=self.Defaults.create_vocab()
+      self.pipeline=[]
+    except:
+      from spacy.vocab import create_vocab
+      self.vocab=create_vocab("eu",self.Defaults)
+      self._components=[]
+      self._disabled=set()
     self.tokenizer=ixaKatTokenizer(self.vocab,convUD)
-    self.pipeline=[]
     self._meta={
       "author":"Koichi Yasuoka",
       "description":"derived from ixaKat",
@@ -78,8 +84,11 @@ class ixaKatTokenizer(object):
     doc=Doc(self.vocab,words=words,spaces=spaces)
     a=numpy.array(list(zip(lemmas,pos,tags,deps,heads)),dtype="uint64")
     doc.from_array([LEMMA,POS,TAG,DEP,HEAD],a)
-    doc.is_tagged=True
-    doc.is_parsed=True
+    try:
+      doc.is_tagged=True
+      doc.is_parsed=True
+    except:
+      pass
     return doc
 
 def load(convUD=True):
