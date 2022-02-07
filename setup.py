@@ -1,13 +1,13 @@
-import setuptools,subprocess,platform
+import setuptools,subprocess,platform,os
 
 with open("README.md","r",encoding="utf-8") as r:
   long_description=r.read()
 URL="https://github.com/KoichiYasuoka/spaCy-ixaKat"
 
-if platform.system()=="Linux" and platform.machine()=="x86_64":
+if platform.machine()=="x86_64" and os.name != "nt":
   subprocess.check_call(["spacy_ixakat/bin/download"])
 else:
-  raise OSError("spaCy-ixaKat only for 64-bit Linux")
+  raise OSError("spaCy-ixaKat only for 64-bit unix")
 
 try:
   p=subprocess.check_output(["./packages.sh"])
